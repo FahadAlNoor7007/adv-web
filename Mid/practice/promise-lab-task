@@ -1,0 +1,43 @@
+let processOrder = () => {
+
+    return new Promise((resolve, reject) => {
+
+        console.log("Processing order...");
+
+        setTimeout(() => {
+
+            let order = {
+                processOrder: "Process Order",
+                orderId: 42017,
+                customer: "Fahad",
+                item: "Chicken Burger",
+                quantity: 2,
+                total: 500
+            };
+
+            let success = true;
+
+            if (success) {
+                resolve(order);
+            } else {
+                reject("Failed to process the order.");
+            }
+
+        }, 2000);
+
+    });
+};
+
+processOrder()
+
+    .then((data) => {
+        console.log("Order Successfully :", data);
+    })
+
+    .catch((error) => {
+        console.log("Error:", error);
+    })
+
+    .finally(()=>{
+        console.log("Order pcessing completed");
+    });
