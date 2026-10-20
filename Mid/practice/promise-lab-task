@@ -28,16 +28,16 @@ let processOrder = () => {
     });
 };
 
-processOrder()
+processOrder() // Process Order
 
     .then((data) => {
-        console.log("Order Successfully :", data);
+        console.log("Order Successfullyy :", data);
     })
 
     .catch((error) => {
         console.log("Error:", error);
     })
 
-    .finally(()=>{
+    .finally(() => {
         console.log("Order pcessing completed");
     });
