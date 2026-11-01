@@ -1,0 +1,204 @@
+{
+  "info": {
+    "name": "SmartUpazila API - Lab Task 2",
+    "description": "Postman Collection for CSC4161 Lab Task 2 (NestJS + TypeORM + PostgreSQL Migrations + Validation)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Users",
+      "item": [
+        {
+          "name": "Create User (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Nafiz Iqbal\",\n  \"phoneNumber\": \"01711223344\",\n  \"nid\": \"1999234567890\",\n  \"upazila\": \"Savar\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Validation Test - Empty Field (Expect 400 Bad Request)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"\",\n  \"phoneNumber\": \"01711223344\",\n  \"nid\": \"1999234567890\",\n  \"upazila\": \"Savar\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Complaints",
+      "item": [
+        {
+          "name": "Create Complaint (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Broken Water Pipeline in Ward 4\",\n  \"description\": \"Clean drinking water pipe is leaking heavily on the main road.\",\n  \"category\": \"Water Supply\",\n  \"location\": \"Ward 4, Savar Upazila\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/complaints",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["complaints"]
+            }
+          }
+        },
+        {
+          "name": "Get All Complaints (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/complaints",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["complaints"]
+            }
+          }
+        },
+        {
+          "name": "Validation Test - Empty Field (Expect 400 Bad Request)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"\",\n  \"description\": \"Water pipe leaking\",\n  \"category\": \"Water Supply\",\n  \"location\": \"Ward 4\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/complaints",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["complaints"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Emergency Services",
+      "item": [
+        {
+          "name": "Create Emergency Service (POST)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceName\": \"Upazila Fire Service & Civil Defense\",\n  \"category\": \"Fire\",\n  \"contactNumber\": \"01700000000\",\n  \"address\": \"Main Road, Station 1, Savar\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/emergency-services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["emergency-services"]
+            }
+          }
+        },
+        {
+          "name": "Get All Emergency Services (GET)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/emergency-services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["emergency-services"]
+            }
+          }
+        },
+        {
+          "name": "Validation Test - Empty Field (Expect 400 Bad Request)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceName\": \"\",\n  \"category\": \"Fire\",\n  \"contactNumber\": \"01700000000\",\n  \"address\": \"Main Road, Station 1\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/emergency-services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["emergency-services"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
